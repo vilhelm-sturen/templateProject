@@ -4,6 +4,7 @@ jobs:
     macos:
       xcode: "9.3.0"
     steps:
+      - checkout
       - run:
           name: Run tests
           command: fastlane scan
