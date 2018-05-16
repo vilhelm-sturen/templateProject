@@ -12,7 +12,7 @@ jobs:
     - brew update
     - brew upgrade
     - brew install carthage
-    - carthage bootstrap --no-use-binaries
+    - carthage bootstrap
     steps:
       - checkout
       - run:
