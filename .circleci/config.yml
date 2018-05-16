@@ -1,7 +1,7 @@
 # .circleci/config.yml
 version: 2
 jobs:
-  build-and-test:
+  build:
     macos:
       xcode: "9.3.0"
     environment:
@@ -11,12 +11,25 @@ jobs:
       - run:
           name: Carthage
           command: carthage update --platform iOS --cache-builds
+  unit-tests:
+    macos:
+      xcode: "9.3.0"
+    environment:
+      FL_OUTPUT_DIR: output
+    steps:
       - run:
           name: Build and run unit tests
           command: fastlane scan
           environment:
             SCAN_DEVICE: iPhone 8
             SCAN_SCHEME: templateTests
+
+  ui-tests:
+    macos:
+      xcode: "9.3.0"
+    environment:
+      FL_OUTPUT_DIR: output
+    steps:
       - run:
           name: Build and run UI tests
           command: fastlane scan
@@ -24,13 +37,14 @@ jobs:
             SCAN_DEVICE: iPhone 8
             SCAN_SCHEME: templateUITests
 
-      - store_test_results:
-          path: output/scan
-      - store_artifacts:
-          path: output
-
 workflows:
   version: 2
   build-and-test:
     jobs:
-      - build-and-test
+      - build
+      - unit-tests:
+          requires:
+            - build
+      - ui-tests:
+          requires:
+            - build
