@@ -10,9 +10,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Carthage
-          command: fastlane carthage(cache_builds: true)
-      - run:
           name: Build and run unit tests
           command: fastlane scan
           environment:
