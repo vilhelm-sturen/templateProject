@@ -7,10 +7,10 @@ jobs:
     environment:
       FL_OUTPUT_DIR: output
     steps:
-      - checkout
       - run:
           name: Carthage
           command: carthage build --no-skip-current --cache-builds
+      - checkout
       - run:
           name: Build and run unit tests
           command: fastlane scan
