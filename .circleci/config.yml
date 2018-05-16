@@ -10,11 +10,17 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build and run tests
+          name: Build and run unit tests
           command: fastlane scan
           environment:
             SCAN_DEVICE: iPhone 8
             SCAN_SCHEME: templateTests
+      - run:
+          name: Build and run UI tests
+          command: fastlane scan
+          environment:
+            SCAN_DEVICE: iPhone 8
+            SCAN_SCHEME: templateUITests
 
       - store_test_results:
           path: output/scan
