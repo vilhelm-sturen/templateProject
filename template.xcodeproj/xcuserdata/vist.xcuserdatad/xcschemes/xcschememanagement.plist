@@ -9,6 +9,29 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>templateTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>D581B80520AC23250090B21C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D581B81920AC23260090B21C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D581B82420AC23260090B21C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
