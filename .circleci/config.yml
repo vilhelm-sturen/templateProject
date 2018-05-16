@@ -9,7 +9,7 @@ jobs:
     steps:
       - run:
           name: Carthage
-          command: carthage build --no-skip-current --cache-builds
+          command: carthage bootstrap
       - checkout
       - run:
           name: Build and run unit tests
