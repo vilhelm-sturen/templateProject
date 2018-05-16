@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run:
           name: Carthage
-          command: carthage build
+          command: carthage update --platform iOS
       - run:
           name: Build and run unit tests
           command: fastlane scan
@@ -25,9 +25,13 @@ jobs:
             SCAN_SCHEME: templateUITests
 
       - store_test_results:
-          path: output/scan
+        path: test_output/report.xml
       - store_artifacts:
-          path: output
+        path: /tmp/test-results
+        destination: scan-test-results
+      - store_artifacts:
+        path: ~/Library/Logs/scan
+        destination: scan-logs
 
 workflows:
   version: 2
