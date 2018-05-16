@@ -6,15 +6,11 @@ jobs:
       xcode: "9.3.0"
     environment:
       FL_OUTPUT_DIR: output
-
-  dependencies:
-  pre:
-    - brew update
-    - brew upgrade
-    - brew install carthage
-    - carthage bootstrap
     steps:
       - checkout
+      - run:
+          name: Carthage
+          command: carthage build --no-skip-current --cache-builds
       - run:
           name: Build and run unit tests
           command: fastlane scan
