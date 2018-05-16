@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run:
           name: Carthage
-          command: carthage update --platform iOS
+          command: carthage update --platform iOS --cache-builds
       - run:
           name: Build and run unit tests
           command: fastlane scan
