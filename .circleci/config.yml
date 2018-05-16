@@ -1,6 +1,5 @@
 # .circleci/config.yml
 version: 2
-
 jobs:
   build-and-test:
     macos:
