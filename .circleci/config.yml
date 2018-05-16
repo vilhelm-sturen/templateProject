@@ -6,9 +6,6 @@ jobs:
       xcode: "9.3.0"
     environment:
       FL_OUTPUT_DIR: output
-    dependencies:
-      cache_directories:
-        - "/Users/distiller/Carthage/"
     steps:
       - checkout
       - run:
