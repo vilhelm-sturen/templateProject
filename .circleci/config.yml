@@ -1,16 +1,16 @@
 # .circleci/config.yml
 version: 2
+dependencies:
+  override:
+    - bin/bootstrap
+  cache_directories:
+    - "Carthage"
 jobs:
   build-and-test:
     macos:
       xcode: "9.3.0"
     environment:
       FL_OUTPUT_DIR: output
-    dependencies:
-      override:
-        - bin/bootstrap-if-needed
-      cache_directories:
-        - "Carthage"
     steps:
       - checkout
       - run:
