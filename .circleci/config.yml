@@ -4,7 +4,7 @@ dependencies:
       override:
         - bin/bootstrap-if-needed
       cache_directories:
-        - "Carthage"
+        - "~/Carthage"
 jobs:
   build-and-test:
     macos:
