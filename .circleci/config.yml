@@ -8,9 +8,17 @@ jobs:
       FL_OUTPUT_DIR: output
     steps:
       - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "Cartfile" }}
+          - v1-dependencies-
       - run:
           name: Carthage
           command: carthage update --platform iOS --cache-builds
+      - save_cache:
+          paths:
+            - ~/Carthage
+          key: v1-dependencies-{{ checksum "Cartfile" }}
       - run:
           name: Build and run unit tests
           command: fastlane scan
