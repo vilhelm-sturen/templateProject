@@ -30,7 +30,7 @@ jobs:
             SCAN_SCHEME: templateUITests
 
       - store_test_results:
-          path: output/scan
+          path: test-results
       - store_artifacts:
           path: output
 
