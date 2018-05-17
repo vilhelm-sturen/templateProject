@@ -7,10 +7,10 @@ jobs:
     environment:
       FL_OUTPUT_DIR: output
     steps:
+      - checkout
       - run:
           name: Carthage
-          command: carthage update
-      - checkout
+          command: carthage bootstrap- --platform iOS
       - run:
           name: Build and run unit tests
           command: fastlane scan
@@ -25,7 +25,7 @@ jobs:
             SCAN_SCHEME: templateUITests
 
       - store_test_results:
-          path: test-results
+          path: output/scan
       - store_artifacts:
           path: output
 
