@@ -14,6 +14,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Carthage
+          command: bin/bootstrap-if-needed
+      - run:
           name: Build and run unit tests
           command: fastlane scan
           environment:
