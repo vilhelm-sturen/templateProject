@@ -14,9 +14,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Carthage
-          command: carthage update --platform iOS
-      - run:
           name: Build and run unit tests
           command: fastlane scan
           environment:
