@@ -25,6 +25,14 @@ end
 
   ####### Tests #######
 
+  lane :unit_tests do
+    scan(
+   	scheme: "templateTests",
+        clean: true
+    )
+
+  end
+
   lane :tests do
     scan(
    	scheme: "templateUITests",
