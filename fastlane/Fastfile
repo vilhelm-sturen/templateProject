@@ -34,10 +34,6 @@ end
    	scheme: "templateTests",
         clean: true
     )
- 
-   swiftlint(
-  	ignore_exit_status: true
-   )
 
   end
 
