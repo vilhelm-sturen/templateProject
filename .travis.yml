@@ -1,7 +1,4 @@
 language: objective-c
 osx_image: xcode9.3
-# Ensure that fastlane is at the latest version
-before_install:
-- bundle update
 script:
-    - fastlane ui_tests
+    - fastlane tests
