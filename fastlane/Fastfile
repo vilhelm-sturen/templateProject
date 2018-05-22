@@ -25,9 +25,13 @@ end
 
   ####### Tests #######
 
-  lane :ui_tests do
+  lane :tests do
     scan(
    	scheme: "templateUITests",
+        clean: true
+    )
+    scan(
+   	scheme: "templateTests",
         clean: true
     )
  
