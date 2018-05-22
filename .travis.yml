@@ -1,4 +1,4 @@
 language: objective-c
-osx_image: xcode9.3.1
+osx_image: xcode9.2
 script:
     - fastlane ui_tests
