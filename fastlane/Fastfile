@@ -18,7 +18,6 @@ default_platform :ios
 platform :ios do
 
 before_all do
-  clear_derived_data
   carthage(cache_builds: true)
 
 end
@@ -28,7 +27,6 @@ end
   lane :ui_tests do
     scan(
    	scheme: "templateUITests",
-        devices: ["iPhone 8"],
         clean: true
     )
  
